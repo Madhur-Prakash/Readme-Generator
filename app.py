@@ -4,10 +4,10 @@ from starlette.middleware.sessions import SessionMiddleware
 import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from generator.src.server import server_router
+# from generator.src.server import server_router
 
 app = FastAPI()
-app.include_router(server_router)
+# app.include_router(server_router)
 
 app.add_middleware(
     CORSMiddleware,

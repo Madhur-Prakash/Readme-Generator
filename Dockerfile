@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 COPY . .
 EXPOSE 8501
 
-CMD ["streamlit", "run", ".\generator\src\readme.py", "--server.port=8501"]
+CMD ["streamlit", "run", "generator/src/readme.py"]
