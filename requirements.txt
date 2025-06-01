@@ -1,0 +1,14 @@
+streamlit
+langchain
+python-dotenv
+langchain_community
+langchain_core
+streamlit
+langchain-openai
+langchain_groq
+fastapi
+uvicorn
+pydantic
+requests
+itsdangerous
+concurrent_log_handler
