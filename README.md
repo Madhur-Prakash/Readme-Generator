@@ -10,11 +10,38 @@ This repository provides a tool for creating clear, professional, and visually a
 * Provides a clear and professional format for README files
 * Helps users create high-quality README files with ease
 
+---
+
 ## Installation
-To use the Readme-Generator, follow these steps:
-1. Clone the repository using the following command: `git clone git@github.com:Madhur-Prakash/Readme-Generator.git`
-2. Navigate to the repository directory: `cd Readme-Generator`
-3. Follow the instructions provided in the repository to generate your custom README file
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Madhur-Prakash/Readme-Generator.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd Readme-Generator
+   ```
+3. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+   ```
+4. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+5. Set up MongoDB:
+   - Install MongoDB and start the service.
+   - Configure the MongoDB URI in the `.env` file.
+
+6. Set up .env:
+- LANGCHAIN_API_KEY = "YOUR_LANGCHAIN_API_KEY"
+- GROQ_API_KEY = "YOUR_GROQ_API_KEY"
+- SESSION_SECRET_KEY = "YOUR_SESSION_SECRET_KEY"
+
+---
 
 ## Usage
 To generate a custom README file, simply provide the required project information and follow the prompts.
@@ -30,6 +57,3 @@ To contribute to the Readme-Generator repository, follow these steps:
 
 ## License
 The license for this repository is not specified.
-
-## Repository Link
-The GitHub repository link for this project is: [git@github.com:Madhur-Prakash/Readme-Generator.git](git@github.com:Madhur-Prakash/Readme-Generator.git)
