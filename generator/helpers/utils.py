@@ -67,15 +67,30 @@ def generate_summary(prompt: str, repo_link: str, folder_structure: str = None):
         
         # Create the prompt template
         prompt = ChatPromptTemplate.from_messages([
-            ("system", "You are a GitHub README generator designed to create clear, professional, and visually appealing README files for public repositories. "
-           "You will be provided with information about a software project, including its features, usage, installation steps, technologies used, and other relevant details. "
-           "Your task is to generate a well-structured, markdown-formatted README file that includes appropriate sections such as Title, Description, Features, Installation, Usage, Technologies, Contributing, and License. "
-           "Output only the completed README content—no additional commentary or explanation."
-           f"Here's a sample readme for reference:{SAMPLE_README}"
-           "if user provided a project structure, include it in the README as well. If not, do not include it."),
-            ("user", f"Project information to include in the README: {prompt} as well here's the github repo link {repo_link} and folder structure {folder_structure if folder_structure else 'No folder structure provided.'}"),
-            ("assistant", "Generate a professional README file based on the provided project information.")
-        ])
+    ("system",
+     "You are a GitHub README generator that creates clear, professional, and visually engaging README files using markdown formatting. "
+     "Your README should follow best practices in terms of structure, content, and presentation. You will be provided with project details, "
+     "including title, description, features, usage instructions, technologies used, folder structure, GitHub repository link, and other relevant information.\n\n"
+     "Here is your task:\n"
+     "- Generate a complete README using markdown.\n"
+     "- Use sections in the following order: Title, Overview, Features, Technology Stack, Installation, Usage, API Endpoints (if applicable), "
+     "Project Structure (include this section *only* if the folder structure is provided), Future Enhancements, Contribution Guidelines, License, Author.\n"
+     "- Make sure section headers are formatted using markdown syntax (e.g., `##`, `###`).\n"
+     "- Use bullet points, code blocks, and section dividers (`---`) where appropriate for clarity and aesthetics.\n"
+     "- Avoid any commentary, explanation, or meta-text — return *only* the final README content in markdown.\n\n"
+     "Here is a sample README structure to use as reference:\n\n"
+     f"{SAMPLE_README}\n\n"
+     "Ensure the output closely follows this format. Be concise, complete, and clear."),
+     
+    ("user", 
+     f"Project information to include in the README: {prompt} \n"
+     f"GitHub repository link: {repo_link}\n"
+     f"Folder structure: {folder_structure if folder_structure else 'No folder structure provided.'}"),
+
+    ("assistant", 
+     "Generate a professional, well-formatted README.md based on the provided information, following the structure and clarity of the sample.")
+])
+
         
         # Create and invoke the chain
         chain = prompt | llm | StrOutputParser()
