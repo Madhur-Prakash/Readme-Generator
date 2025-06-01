@@ -20,7 +20,7 @@ if st.button("Generate Readme"):
             try:
                 readme_text = st.session_state.get("readme_text")
                 if not readme_text:
-                    readme_text = generate_summary(prompt, repo_link)
+                    readme_text = generate_summary(prompt, repo_link, folder_structure)
                     st.session_state.readme_text = readme_text
                 st.success("Readme generated successfully!")
                 st.markdown("### Generated Readme")

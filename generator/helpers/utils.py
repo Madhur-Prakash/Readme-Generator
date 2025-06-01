@@ -56,7 +56,11 @@ def calculate_height(text: str, line_height: int = 20, base_height: int = 100):
     return min(800, max(base_height, lines * line_height))
 
 
-SAMPLE_README = os.path.join(os.path.dirname(__file__), "prompt.md") 
+SAMPLE_README_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'templates', 'prompt.md')
+with open(SAMPLE_README_PATH, 'r', encoding='utf-8') as file:
+    SAMPLE_README = file.read()
+
+    # print(f"Sample README path: {SAMPLE_README}")
 def generate_summary(prompt: str, repo_link: str, folder_structure: str = None):
     try:
         # Initialize LLM with the API key
@@ -78,6 +82,11 @@ def generate_summary(prompt: str, repo_link: str, folder_structure: str = None):
      "- Make sure section headers are formatted using markdown syntax (e.g., `##`, `###`).\n"
      "- Use bullet points, code blocks, and section dividers (`---`) where appropriate for clarity and aesthetics.\n"
      "- Avoid any commentary, explanation, or meta-text — return *only* the final README content in markdown.\n\n"
+     "give only markdown output, do not include any other text or explanation.\n\n"
+     "Use the following sample README as a reference for structure and formatting:\n\n"
+     "as for author use username form the repo link, if not available use Your Name.\n\n"
+     "and as for liscense use MIT License.\n\n"
+     "give the folder structure in the Project Structure section only if it is provided, otherwise skip this section.\n\n"
      "Here is a sample README structure to use as reference:\n\n"
      f"{SAMPLE_README}\n\n"
      "Ensure the output closely follows this format. Be concise, complete, and clear."),
