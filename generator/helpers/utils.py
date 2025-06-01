@@ -88,7 +88,8 @@ def generate_summary(prompt: str, repo_link: str, folder_structure: str = None):
      "and as for liscense use MIT License.\n\n"
      "give the folder structure in the Project Structure section only if it is provided, otherwise skip this section.\n\n"
      "Here is a sample README structure to use as reference:\n\n"
-     "dont give lines like (`here's the output:`) or Here's the generated README:"
+     "dont give lines like (`here's the output:`) or Here's the generated README: or Here is the README:\n\n"
+     "just give the output in markdown, no other text.\n\n"
      f"{SAMPLE_README}\n\n"
      "Ensure the output closely follows this format. Be concise, complete, and clear."),
      
