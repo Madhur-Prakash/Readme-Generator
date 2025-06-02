@@ -8,18 +8,17 @@ This repository provides a FastAPI-based application for generating custom READM
 ---
 
 ## Features
-- **Customizable README Templates**: Generate README files with custom sections, headers, and content.
+- **Customizable**: Generate README files tailored to your project's needs.
+- **Markdown Formatting**: Create visually engaging README files using markdown syntax.
 - **FastAPI-Powered**: Built with FastAPI for high performance and scalability.
-- **Markdown Formatting**: Supports markdown syntax for formatting and styling README content.
-- **Easy to Use**: Simple and intuitive API for generating custom README files.
+- **Easy Deployment**: Deploy using a virtual environment or Docker container.
 
 ---
 
 ## Technology Stack
 - **Backend Framework**: FastAPI
 - **Programming Language**: Python
-- **Database**: Not applicable (in-memory processing)
-- **Markdown Parsing**: Uses Python's built-in markdown library
+- **Containerization**: Docker
 
 ---
 
@@ -42,64 +41,31 @@ This repository provides a FastAPI-based application for generating custom READM
    ```bash
    pip install -r requirements.txt
    ```
-5. Set up .env:
-- LANGCHAIN_API_KEY = "YOUR_LANGCHAIN_API_KEY"
-- GROQ_API_KEY = "YOUR_GROQ_API_KEY"
-- SESSION_SECRET_KEY = "YOUR_SESSION_SECRET_KEY"
+5. Alternatively, run using Docker:
+   ```bash
+   docker run -d --name Readme -p 8501:8501  readme
+   ```
 
 ---
 
 ## Usage
 
-1. Start the FastAPI server:
+1. Start the FastAPI server (if not using Docker):
    ```bash
-   uvicorn app:app --reload
+   uvicorn main:app --reload
    ```
 2. Access the API documentation at:
    ```
-   http://127.0.0.1:8000/docs
+   http://127.0.0.1:8501/docs
    ```
-3. Use the API to generate custom README files by providing the required information.
-
----
-
-## API Endpoints
-
-### README Generation Endpoints
-- **POST /generate-readme**: Generate a custom README file based on the provided data.
-
----
-
-## Project Structure
-
-```plaintext
-Readme-Generator/
-├── .env
-├── .gitignore  # gitignore file for GitHub
-├── Dockerfile
-├── README.md  # Project documentation
-├── __init__.py  # initializes package
-├── app.py  # main FastAPI app
-├── generator
-│   ├── helpers
-│   │   ├── __init__.py  # initializes package
-│   │   └── utils.py
-│   ├── models
-│   │   ├── __init__.py  # initializes package
-│   │   └── models.py  # models
-│   └── src
-│       ├── __init__.py  # initializes package
-│       └── readme.py
-├── prompt.md
-└── requirements.txt
-```
+3. Use the API to generate custom README files.
 
 ---
 
 ## Future Enhancements
 - Add support for more advanced markdown features.
-- Implement a web interface for easier usage.
-- Enhance error handling and logging for better debugging.
+- Implement a user interface for easier README generation.
+- Enhance error handling and logging.
 
 ---
 
@@ -118,5 +84,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 ## Author
-**Madhur Prakash**  
-[GitHub](https://github.com/Madhur-Prakash) | [Medium](https://medium.com/@madhurprakash2005)
+**Madhur-Prakash**  
+[GitHub](https://github.com/Madhur-Prakash)
