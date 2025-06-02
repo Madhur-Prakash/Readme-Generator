@@ -27,7 +27,7 @@ This repository provides a FastAPI-based application for generating custom READM
 
 1. Clone the repository:
    ```bash
-   git clone git@github.com:Madhur-Prakash/Readme-Generator.git
+   git clone https://github.com/Madhur-Prakash/Readme-Generator.git
    ```
 2. Navigate to the project directory:
    ```bash
