@@ -1,6 +1,6 @@
 # Readme-Generator
 
-**A FastAPI-Based Custom README Generator for GitHub Repositories**
+**A Streamlit-Based README Generator for GitHub Repositories**
 
 ## Overview
 This repository provides a FastAPI-based application for generating custom README files for GitHub repositories. It allows users to create professional and visually engaging README files using markdown formatting.
@@ -8,17 +8,18 @@ This repository provides a FastAPI-based application for generating custom READM
 ---
 
 ## Features
-- **Customizable**: Generate README files tailored to your project's needs.
-- **Markdown Formatting**: Create visually engaging README files using markdown syntax.
+- **Customizable README Generation**: Create README files tailored to your project's needs.
+- **Markdown Formatting**: Utilize markdown syntax for a professional and visually appealing README.
 - **FastAPI-Powered**: Built with FastAPI for high performance and scalability.
-- **Easy Deployment**: Deploy using a virtual environment or Docker container.
+- **Streamlit Interface**: Interactive interface for easy README generation.
+- **Docker Support**: Run the application using Docker for convenience and portability.
 
 ---
 
 ## Technology Stack
-- **Backend Framework**: FastAPI
-- **Programming Language**: Python
+- **Interface**: Streamlit
 - **Containerization**: Docker
+- **Programming Language**: Python
 
 ---
 
@@ -32,7 +33,7 @@ This repository provides a FastAPI-based application for generating custom READM
    ```bash
    cd Readme-Generator
    ```
-3. Create and activate a virtual environment:
+3. Create and activate a virtual environment (optional but recommended):
    ```bash
    python -m venv venv
    source venv/bin/activate   # On Windows: venv\Scripts\activate
@@ -41,7 +42,16 @@ This repository provides a FastAPI-based application for generating custom READM
    ```bash
    pip install -r requirements.txt
    ```
-5. Alternatively, run using Docker:
+5. Run the Streamlit app:
+   ```bash
+   streamlit run .\generator\src\readme.py
+   ```
+Alternatively, you can use Docker:
+1. Build the Docker image:
+   ```bash
+   docker build -t readme .
+   ```
+2. Run the Docker container:
    ```bash
    docker run -d --name Readme -p 8501:8501  readme
    ```
@@ -50,15 +60,8 @@ This repository provides a FastAPI-based application for generating custom READM
 
 ## Usage
 
-1. Start the FastAPI server (if not using Docker):
-   ```bash
-   uvicorn main:app --reload
-   ```
-2. Access the API documentation at:
-   ```
-   http://127.0.0.1:8501/docs
-   ```
-3. Use the API to generate custom README files.
+1. Access the Streamlit app at `http://localhost:8501` (default port).
+2. Follow the interactive prompts to generate your custom README file.
 
 ---
 
@@ -85,4 +88,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Author
 **Madhur-Prakash**  
-[GitHub](https://github.com/Madhur-Prakash)
+[GitHub](https://github.com/Madhur-Prakash) | [Medium](https://medium.com/@madhurprakash2005)
