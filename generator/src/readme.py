@@ -40,13 +40,25 @@ if "readme" in st.session_state:
     dynamic_height = calculate_height(st.session_state.readme)
     st.code(st.session_state.readme, language="markdown", height=dynamic_height, wrap_lines=True)
     st.download_button("Download Readme", st.session_state.readme, file_name="README.md", mime="text/markdown", key=str(uuid.uuid4()), help="Download the generated README file", type="secondary")
-
-# Clear button
-if st.button("Clear Readme", help="Clear the generated README", type="secondary"):
-    if "readme" in st.session_state:
+    if st.button("Clear Readme", help="Clear the generated README", type="secondary"):
         del st.session_state.readme
         logging.info("Readme cleared from session state")
         st.rerun()
-    else:
-        st.warning("No readme to clear")
-        logging.warning("No readme to clear")
+
+# Footer
+st.markdown("---")
+st.markdown(
+    """
+    🚀 **This project is open-source!**  
+    Check it out on [GitHub](https://github.com/Madhur-Prakash/Readme-Generator.git).  
+    Contributions, suggestions, and bug reports are all welcome!
+
+    ⭐️ If you find this tool useful, please consider giving it a star!
+
+    💬 Found a bug or have a feature request?  
+    [Open an issue](https://github.com/Madhur-Prakash/Readme-Generator/issues)
+
+    🧑‍🎓 Created and maintained by [Madhur Prakash](https://github.com/Madhur-Prakash)
+    """
+)
+
