@@ -40,6 +40,9 @@ if "readme" in st.session_state:
     dynamic_height = calculate_height(st.session_state.readme)
     st.code(st.session_state.readme, language="markdown", height=dynamic_height, wrap_lines=True)
     
+    if(st.link_button("View Readme", "https://readme.so/editor", help="View the generated README on Readme.so", type="secondary")):
+        pass
+
     col1, spacer, col2 = st.columns([1.9, 2,  1.2], gap="large", vertical_alignment="center")
     with col1:
         st.download_button(
