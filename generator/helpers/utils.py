@@ -106,7 +106,7 @@ def generate_summary(prompt: str, repo_link: str, folder_structure: str = None):
         # Create and invoke the chain
         chain = prompt | llm | StrOutputParser()
         summary = chain.invoke({"Readme_Gen": prompt})
-        logger.info("Generated summary successfully")
+        logger.info("Generated Readme successfully")
         return summary
     except Exception as e:
         logger.error(f"Error generating summary: {str(e)}")
