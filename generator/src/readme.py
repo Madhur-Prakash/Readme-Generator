@@ -40,20 +40,11 @@ if "readme" in st.session_state:
     dynamic_height = calculate_height(st.session_state.readme)
     st.code(st.session_state.readme, language="markdown", height=dynamic_height, wrap_lines=True)
     
-    if(st.link_button("View Readme", "https://readme.so/editor", help="View the generated README on Readme.so", type="secondary")):
-        pass
-
     col1, spacer, col2 = st.columns([1.9, 2,  1.2], gap="large", vertical_alignment="center")
     with col1:
-        st.download_button(
-                        "Download Readme",
-                        st.session_state.readme,
-                        file_name="README.md",
-                        mime="text/markdown",
-                        key=str(uuid.uuid4()),
-                        help="Download the generated README file",
-                        type="secondary"
-                    )
+        if(st.link_button("View Readme", "https://readme.so/editor", help="View the generated README on Readme.so", type="secondary")):
+            pass
+
     with spacer:
         pass
     with col2:
@@ -61,6 +52,8 @@ if "readme" in st.session_state:
             del st.session_state.readme
             logging.info("Readme cleared from session state")
             st.rerun()
+            
+    st.download_button("Download Readme", st.session_state.readme, file_name="README.md", mime="text/markdown", key=str(uuid.uuid4()), help="Download the generated README file",type="secondary")
 
 # Footer
 st.markdown("---")
