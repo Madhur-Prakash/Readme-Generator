@@ -1,3 +1,4 @@
+import traceback
 import streamlit as st
 import os
 import sys
@@ -31,6 +32,8 @@ if st.button("Generate Readme", help="Generate a README file based on the provid
                 st.session_state.readme = readme_text
                 st.success("Readme generated successfully!")
             except Exception as e:
+                formatted_error = traceback.format_exc()
+                print(formatted_error)
                 st.error(f"Request failed: {str(e)}")
                 logging.error(f"Error generating README: {str(e)}")
 
