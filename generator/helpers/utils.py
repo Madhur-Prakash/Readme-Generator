@@ -61,7 +61,7 @@ with open(SAMPLE_README_PATH, 'r', encoding='utf-8') as file:
     SAMPLE_README = file.read()
 
     # print(f"Sample README path: {SAMPLE_README}")
-def generate_summary(prompt: str, repo_link: str, folder_structure: str = None):
+def generate_summary(input_prompt: str, repo_link: str, folder_structure: str = None):
     try:
         # Initialize LLM with the API key
         llm = ChatGroq(
@@ -94,7 +94,7 @@ def generate_summary(prompt: str, repo_link: str, folder_structure: str = None):
      "Ensure the output closely follows this format. Be concise, complete, and clear."),
      
     ("user", 
-     f"Project information to include in the README: {prompt} \n"
+     f"Project information to include in the README: {input_prompt} \n"
      f"GitHub repository link: {repo_link}\n"
      f"Folder structure: {folder_structure if folder_structure else 'No folder structure provided.'}"),
 
