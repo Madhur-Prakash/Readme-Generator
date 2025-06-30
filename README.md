@@ -42,7 +42,15 @@ This repository provides a FastAPI-based application for generating custom READM
    ```bash
    pip install -r requirements.txt
    ```
-5. Run the Streamlit app:
+5.  Set up .env:
+
+```plaintext
+SECRET_KEY = "YOUR_SECRET_KEY"
+LANGCHAIN_API_KEY = "YOUR_LANGCHAIN_API_KEY"
+GROQ_API_KEY = "YOUR_GROQ_API_KEY" 
+```
+---
+6. Run the Streamlit app:
    ```bash
    streamlit run .\generator\src\readme.py
    ```
