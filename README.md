@@ -44,12 +44,10 @@ This repository provides a FastAPI-based application for generating custom READM
    ```
 5.  Set up .env:
 
-```plaintext
-SECRET_KEY = "YOUR_SECRET_KEY"
-LANGCHAIN_API_KEY = "YOUR_LANGCHAIN_API_KEY"
-GROQ_API_KEY = "YOUR_GROQ_API_KEY" 
+``` bash
+   # Copy the .env.sample file to .env and fill in the required values.
 ```
----
+
 6. Run the Streamlit app:
    ```bash
    streamlit run .\generator\src\readme.py
