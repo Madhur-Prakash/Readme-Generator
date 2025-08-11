@@ -44,9 +44,9 @@ This repository provides a FastAPI-based application for generating custom READM
    ```
 5.  Set up .env:
 
-``` bash
-   # Copy the .env.sample file to .env and fill in the required values.
-```
+      ``` bash
+      # Copy the .env.sample file to .env and fill in the required values.
+      ```
 
 6. Run the Streamlit app:
    ```bash
