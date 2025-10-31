@@ -7,10 +7,10 @@ This repository provides a FastAPI-based application for generating custom READM
 
 ---
 
-## Try It Out 🚀
+## Try It Out
 
 You can try the live version of the README Generator here:  
-👉 [Readme Generator Streamlit App](https://readme-generator-07.streamlit.app/)
+[Readme Generator Streamlit App](https://readme-generator-07.streamlit.app/)
 
 ---
 
