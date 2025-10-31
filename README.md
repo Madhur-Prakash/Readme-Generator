@@ -7,6 +7,13 @@ This repository provides a FastAPI-based application for generating custom READM
 
 ---
 
+## Try It Out 🚀
+
+You can try the live version of the README Generator here:  
+👉 [Readme Generator Streamlit App](https://readme-generator-07.streamlit.app/)
+
+---
+
 ## Features
 - **Customizable README Generation**: Create README files tailored to your project's needs.
 - **Markdown Formatting**: Utilize markdown syntax for a professional and visually appealing README.
