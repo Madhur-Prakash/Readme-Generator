@@ -12,7 +12,7 @@ logging = setup_logging()
 st.title("Custom Readme Generator")
 st.subheader("Welcome to Readme Generator")
 
-prompt = st.text_area("Enter project overview. Or leave it blank", placeholder="e.g., This project is a web application.", height=100)
+prompt = st.text_area("Enter project overview", placeholder="e.g., This project is a web application.", height=100)
 repo_link = st.text_input("Enter the link of the GitHub repo", placeholder="e.g., https://github.com/username/project-name")
 folder_structure = st.text_area(
     "Enter the folder structure of the project (optional).\n",
@@ -22,9 +22,11 @@ folder_structure = st.text_area(
 
 # Button to generate README
 if st.button("Generate Readme", help="Generate a README file based on the provided details", type="primary"):
-    if not (prompt or repo_link):
-        st.error("Please provide required details")
-        logging.error("Please provide required details")
+    if (prompt == '' or repo_link == ''):
+        missing_fields = "Project Overview and GitHub Repo Link" if prompt == '' and repo_link == '' else "Project Overview" if prompt == '' else "GitHub Repo Link"
+        st.error(f"Please provide required details: {missing_fields}")
+    elif not (repo_link.startswith("https://github.com/")):
+        st.error("Please enter a valid GitHub repository link.")
     else:
         with st.spinner("Generating Readme..."):
             try:
